@@ -2,29 +2,26 @@
 
 @section('content')
 
-<!-- Container for demo purpose -->
-<div class="container my-16 mx-auto md:px-6">
-    <!-- Section: Design Block -->
-    <section class="mb-32 text-center">
-        <h2 class="mb-12 text-center text-3xl font-bold">Berita</h2>
+<section id="blog" class="pt-16 pb-32 bg-slate-100">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center mb-16">
+                <h2 class="font-semibold text-red-500 text-2xl mb-4 sm:text-3xl lg:text-4xl">Berita Terkini</h2>
+                <p class="font-medium text-md text-slate-500 md:text-lg">Berikut adalah postingan dari kami</p>
+            </div>
+        </div>
 
-        <div class="grid gap-6 lg:grid-cols-3 xl:gap-x-12">
-
+        <div class="flex flex-wrap justify-center">
             @forelse ($posts as $key => $post)
-            <div class="mb-6 lg:mb-0">
-                <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
-                    data-te-ripple-init data-te-ripple-color="light">
-                    <img src="{{url('uploads/post/' .$post->image)}}" class="w-full" alt="Louvre" />
-                    <a href="{{url('berita/'.$post->slug)}}">
-                        <div
-                            class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-                        </div>
-                    </a>
-                </div>
-
-                <h5 class="mb-3 text-lg font-bold">{{$post->title}}</h5>
-                <div class="pt-3">
-                    <a href="{{url('berita/'.$post->slug)}}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none ">Read more</a>
+            <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <img src="{{url('uploads/post/' .$post->image)}}" alt="" class="w-full max-h-60">
+                    <div class="py-8 px-6">
+                        <h3>
+                            <a href="#" class="block mb-10 font-semibold text-xl text-dark hover:text-red-500 truncate">{{$post->title}}</a>
+                        </h3>
+                        <a href="{{url('berita/'.$post->slug)}}" class="font-medium text-sm text-white bg-red-500 py-2 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
+                    </div>
                 </div>
             </div>
             @empty
@@ -32,11 +29,8 @@
                     No Post Available
                 </p>
             @endforelse
-
         </div>
-    </section>
-    <!-- Section: Design Block -->
-</div>
-<!-- Container for demo purpose -->
+    </div>
+</section>
 
 @endsection

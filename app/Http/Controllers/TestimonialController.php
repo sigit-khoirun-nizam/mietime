@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TestimonialRequest;
 use App\Http\Requests\TransactionRequest;
+use App\Models\Testi;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use Yajra\DataTables\Facades\DataTables;
 
 class TestimonialController extends Controller
@@ -61,5 +63,17 @@ class TestimonialController extends Controller
         $testimonial->delete();
 
         return redirect()->route('dashboard.testimonial.index');
+    }
+
+    public function indexTesti()
+    {
+        $testi = Testi::all();
+        return view('pages.dashboard.testi.index', compact('testi'));
+    }
+
+    public function show(string $id): View
+    {
+        $testi = Testi::findOrFail($id);
+        return view('pages.dashboard.testi.show', compact('testi'));
     }
 }

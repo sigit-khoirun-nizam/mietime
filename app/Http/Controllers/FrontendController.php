@@ -6,6 +6,7 @@ use App\Http\Requests\CheckoutRequest;
 use App\Models\Cart;
 use App\Models\Menu;
 use App\Models\Post;
+use App\Models\Testi;
 use App\Models\Testimonial;
 use App\Models\Transaction;
 use App\Models\TransactionItem;
@@ -153,5 +154,36 @@ class FrontendController extends Controller
     {
         $post = Post::where('slug', $post_slug)->first();
         return view('pages.frontend.detail', compact('post'));
+    }
+
+    public function show()
+    {
+        return view('pages.frontend.testimoni');
+    }
+
+    public function submit(Request $request)
+    {
+        $request->validate([
+            'nama_pelanggan' => 'required',
+            'nama_makanan' => 'required',
+            'no_wa' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'alamat' => 'required',
+            'deskripsi' => 'required|min:10',
+            'gambar' => 'required|mimes:jpeg,png,jpg,gif'
+        ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        // dd($request->all());
+
+        Testi::create($input);
+        return back()->with('seccess', 'Testimoni sudah dikirim');
     }
 }

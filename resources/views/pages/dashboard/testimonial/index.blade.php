@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Menu') }}
+            {{ __('Testimoni') }}
         </h2>
     </x-slot>
 
@@ -33,8 +33,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="mb-10">
-                <a href="{{ route('dashboard.testimonial.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                    + Create testimonial
+                <a href="{{ route('dashboard.testimonial.create') }}" class="text-base font-semibold text-white bg-blue-500 py-2 px-4 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500">
+                    + Testimoni
                 </a>
             </div>
             <div class="shadow overflow-hidden rounded">

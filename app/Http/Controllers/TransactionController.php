@@ -70,9 +70,10 @@ class TransactionController extends Controller
 
     // Generate PDF
     public function createPDF() {
+        $today = now()->format('d-m-Y');
         $transaction = Transaction::all();
 
-        $pdf = PDF::loadview('pdf.template', ['transaction'=>$transaction]);
+        $pdf = PDF::loadview('pdf.template', ['transaction'=>$transaction, 'today' => $today]);
         return $pdf->stream();
     }
 }

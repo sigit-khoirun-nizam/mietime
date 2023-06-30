@@ -6,18 +6,18 @@
     <!-- Section: Design Block -->
     <section>
         <div class="relative overflow-hidden bg-no-repeat bg-cover" style="
-          background-position: 50%;
-          background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg');
-          height: 750px;
+        background-position: 50%;
+        background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg');
+        height: 600px;
         ">
             <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-                style="background-color: rgba(0, 0, 0, 0.75)">
+                style="background-color: rgba(0, 0, 0, 0.6)">
                 <div class="flex justify-center items-center h-full">
                     <div class="text-center bg-clip-text text-slate-300 px-6 md:px-12">
-                        <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold font-serif">
+                        <h1 class="block font-bold text-slate-200 text-4xl mt-1 lg:text-5xl">
                             Selamat Datang 
                         </h1>
-                        <h2 class="text-2xl md:text-3xl font-bold font-serif">Di Reservasi Mie Time Simo</h2>
+                        <h2 class="font-semibold text-slate-300 text-lg mb-5 lg:text-2xl">Di Website Mie Time Simo</h2>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
 {{-- End Hero Section --}}
 
 {{-- Our Story --}}
-<section class="px-2 py-32 bg-white md:px-0">
+<section class="px py-32 bg-white md:px-0">
     <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
         <div class="flex flex-wrap items-center sm:-mx-3">
             <div class="w-full md:w-1/2 md:px-3">
@@ -36,15 +36,15 @@
                         class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                         > -->
                     </h3>
-                    <h2 class="text-4xl text-red-600 font-serif">Tentang Kami</h2>
+                    <h2 class="font-semibold text-red-500 text-2xl mb-4 sm:text-3xl lg:text-4xl">Tentang Kami</h2>
                     <!-- </h1> -->
-                    <p class="mx-auto text-base font-semibold text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl leading-relaxed indent-12">
+                    <p class="font-medium text-md text-slate-500 md:text-lg">
                         Mie time simo menghidangkan aneka makanan atau minuman yang sangat murah bagi kalangan warga
                         desa, mie time tersebut letaknya jln. raya ps. sungelebak karanggeneng lamongan no.5, simo,
                         sungelebak, kec. karanggeneng, kabupaten lamongan.
                     </p>
                     <div class="relative flex">
-                        <button type="button" class="text-white font-serif bg-gradient-to-r from-red-500 to-blue-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"><a href="https://goo.gl/maps/wyftmwYaXd5fyAMj7" target="_blank">Lebih Lanjut</a></button>
+                        <button type="button" class="text-base font-semibold text-white bg-red-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"><a href="https://goo.gl/maps/wyftmwYaXd5fyAMj7" target="_blank">Lebih Lanjut</a></button>
                     </div>
                 </div>
             </div>
@@ -60,16 +60,16 @@
 
 {{-- About Us --}}
 <section class="py-20 bg-gray-50">
-    <div class="container items-center max-w-6xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
+    <div class="container items-center max-w-6xl px-4 mx-auto sm:px-20 md:px-32 lg:px-16">
         <div class="flex flex-wrap items-center -mx-3">
             <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
                 <div class="w-full lg:max-w-md">
                     {{-- <h2 class="mb-4 text-2xl font-bold">About Us</h2> --}}
                     <h2
-                        class="mb-4 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-slate-300">
+                        class="font-semibold text-red-500 text-2xl mb-4 sm:text-3xl lg:text-4xl">
                         Kenapa Memilih Kami?</h2>
 
-                    <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">Para chef sendiri di mie time sudah
+                    <p class="font-medium text-md text-slate-500 md:text-lg mb-10">Para chef sendiri di mie time sudah
                         mahir dengan membuat makanan atau minuman dikarenakan mereka sudah terlatih secara kompeten.</p>
                     <ul>
                         <li class="flex items-center py-2 space-x-4 xl:py-3">
@@ -110,65 +110,68 @@
 </section>
 {{-- End About Us --}}
 
-{{-- Our Menu --}}
-<section class="mt-8 bg-white">
-    <div class="mt-4 text-center">
-        {{-- <h3 class="text-2xl font-bold">Our Menu</h3> --}}
-        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-slate-300">
-            Menu Favorite</h2>
-    </div>
-    <div class="container w-full px-5 py-6 mx-auto">
-        <div class="grid lg:grid-cols-4 gap-y-6">
-            @foreach($menus as $menu)
-                <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-                    <img class="w-full h-48"
-                        src="{{ $menu->galleries()->exists() ? Storage::url($menu->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}"
-                        alt="Image" />
-                    <div class="px-6 py-4">
-                        <div class="flex mb-2">
+{{-- Menu favorite --}}
+<section id="menu" class="pt-16 pb-16 bg-slate-100">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center mb-16">
+                <h2 class="font-semibold text-red-500 text-2xl mb-4 sm:text-3xl lg:text-4xl">Menu Favorite</h2>
+            </div>
+        </div>
 
-                        </div>
-                        <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
-                            {{ $menu->name }}
-                        </h4>
+        <div class="flex flex-wrap justify-center">
+            @foreach($menus as $menu)
+            <div class="w-full px-4 lg:w-1/3 xl:w-1/4">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <img src="{{ $menu->galleries()->exists() ? Storage::url($menu->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}" alt="" class="w-full max-h-40">
+                    <div class="py-8 px-6">
+                        <h3>
+                            <a href="{{ route('details', $menu->slug) }}" class="block mb-3 font-semibold text-xl text-dark hover:text-red-500">{{ $menu->name }}</a>
+                        </h3>
                     </div>
                     <div class="flex items-center justify-between p-4">
-                        <span class="text-xl text-green-600">Rp.{{ number_format($menu->price) }}</span>
+                        <span class="text-xl font-semibold text-red-500">Rp.{{ number_format($menu->price) }}</span>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
 </section>
-{{-- End Our Menu --}}
+{{-- End menu favorite --}}
 
 {{-- Testimonials --}}
-<section class="pt-4 pb-12 bg-gray-800">
-    <div class="my-16 text-center">
-        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-slate-300">
-            Testimoni</h2>
-        <p class="text-xl text-white font-sans">Berikut adalah testimoni pelanggan dari kami</p>
-    </div>
-    <div class="grid gap-2 lg:grid-cols-3 m-10">
+<section id="testimonial" class="pt-16 pb-16 bg-slate-100">
+            <div class="container">
+                <div class="w-full px-4">
+                    <div class="max-w-xl mx-auto text-center mb-32">
+                        <h2 class="font-semibold text-red-500 text-2xl mb-4 sm:text-3xl lg:text-4xl">Testimonial</h2>
+                        <p class="font-medium text-md text-slate-500 md:text-lg">Berikut adalah testimoni dari pelanggan kami</p>
+                    </div>
+                </div>
 
-        @foreach ($testimonials as $testimonial)
-        <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
-            <div class="flex justify-center -mt-16 md:justify-end">
-                <img class="object-cover w-20 h-20 border-2 border-green-500 rounded-full"
-                        src="{{ url($testimonial->image) }}"
-                        alt="Image" />
+                
+                <div class="flex flex-wrap justify-center gap-5 pb-24">
+                    @foreach ($testimonials as $testimonial)
+                    <div class="p-4 bg-white rounded-lg shadow-lg w-full px-4 lg:w-1/3 xl:w-1/4">
+                        <div class="flex justify-center -mt-16 md:justify-end">
+                            <img class="object-cover w-20 h-20 border-2 border-red-500 rounded-full"
+                                    src="{{ url($testimonial->image) }}"
+                                    alt="Image" />
+                        </div>
+                        <div>
+                            <h2 class="block font-semibold text-xl text-dark hover:text-red-500 truncate">{{ $testimonial->nama_makanan }}</h2>
+                            <p class="mt-2 text-gray-600">{{ $testimonial->deskripsi }}</p>
+                        </div>
+                        <div class="flex justify-end mt-4">
+                            <span class="text-xl font-medium text-red-500">{{ $testimonial->nama_pelanggan }}</span>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                
+                
             </div>
-            <div>
-                <h2 class="text-3xl font-semibold text-gray-800">{{ $testimonial->nama_makanan }}</h2>
-                <p class="mt-2 text-gray-600">{{ $testimonial->deskripsi }}</p>
-            </div>
-            <div class="flex justify-end mt-4">
-                <a href="#" class="text-xl font-medium text-green-500">{{ $testimonial->nama_pelanggan }}</a>
-            </div>
-        </div>            
-        @endforeach
-        
-    </div>
-</section>
+        </section>
 {{-- End Testimonials --}}
 @endsection

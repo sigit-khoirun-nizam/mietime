@@ -11,6 +11,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('generate', function (){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo'ok';
+});
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('details/{slug}', [FrontendController::class, 'details'])->name('details');
 Route::get('checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
@@ -34,6 +38,8 @@ Route::get('contact', [ContactController::class, 'show'])->name('contact-show');
 Route::post('contact', [ContactController::class, 'submit'])->name('contact-submit');
 Route::get('berita', [FrontendController::class, 'news'])->name('berita');
 Route::get('berita/{post_slug}', [FrontendController::class, 'newsDetail'])->name('news-detail');
+Route::get('testimoni', [FrontendController::class, 'show'])->name('testimoni-show');
+Route::post('testimoni', [FrontendController::class, 'submit'])->name('testimoni-submit');
 
 Route::get('transaction/pdf', [TransactionController::class, 'createPDF'])->name('transaction-pdf');
 
@@ -46,6 +52,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/banner', [DashboardController::class, 'banner'])->name('banner');
 });
 
 Route::middleware(['admin'])
@@ -66,6 +73,7 @@ Route::middleware(['admin'])
 
         Route::resource('categories', CategoryController::class);
         Route::resource('posts', PostController::class);
+        Route::get('testi', [TestimonialController::class, 'indexTesti'])->name('indexTesti');
 });
 
 // Untuk user

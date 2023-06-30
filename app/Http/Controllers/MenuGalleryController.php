@@ -61,6 +61,7 @@ class MenuGalleryController extends Controller
         {
             foreach ($files as $file) {
                 $path = $file->store('public/gallery');
+                // $path = $file->storeAs('public/gallery', $file->hashName());
 
                 MenuGallery::create([
                     'menus_id'   =>  $menu->id,

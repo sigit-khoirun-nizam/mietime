@@ -21,7 +21,8 @@
                     <a href="{{ route('berita') }}" class="py-4 px-2 {{ request()->is('berita') ? 'text-red-600' : 'text-gray-600' }} font-semibold hover:text-red-500 transition duration-300">Berita</a>
                     <a href="{{ route('contact-show') }}" class="py-4 px-2 {{ request()->is('contact') ? 'text-red-600' : 'text-gray-600' }} font-semibold hover:text-red-500 transition duration-300">Kontak</a>
                     @auth
-                    <a href="{{ route('dashboard') }}" class="{{ request()->is('dashboard') ? 'text-red-600' : 'text-gray-600' }} font-semibold">Dashboard</a>
+                    <a href="{{ route('testimoni-show') }}" class="py-4 px-2 {{ request()->is('testimoni') ? 'text-red-600' : 'text-gray-600' }} font-semibold">Testimoni</a>
+                    <a href="{{ route('dashboard') }}" class="py-4 px-2 {{ request()->is('dashboard') ? 'text-red-600' : 'text-gray-600' }} font-semibold">Dashboard</a>
                     @endauth
                     <a id="header-cart"
                     class="flex items-center justify-center w-8 h-8 text-black {{ Route::current()->getName() == 'index' ? 'md:text-white' : 'md:text-black' }}"
@@ -69,6 +70,14 @@
             <li><a href="{{ route('lokasi') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Lokasi</a></li>
             <li><a href="{{ route('berita') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Berita</a></li>
             <li><a href="{{ route('contact-show') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Kontak</a></li>
+            @auth
+                <li><a href="{{ route('testimoni-show') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Testimoni</a></li>
+                <li><a href="{{ route('dashboard') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Dashboard</a></li>
+            @endauth
+            @guest
+                <li><a href="{{ route('login') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Login</a></li>
+                <li><a href="{{ route('register') }}" class="block text-sm px-4 py-4 text-white bg-red-500 font-semibold">Register</a></li>
+            @endguest
         </ul>
     </div>
     <script>

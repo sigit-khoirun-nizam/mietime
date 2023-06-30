@@ -12,6 +12,7 @@
 		}
 	</style>
 
+	<p class="text-center">{{ $today }}</p>
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
@@ -37,6 +38,5 @@
 			@endforeach
 		</tbody>
 	</table>
- 
 </body>
 </html>

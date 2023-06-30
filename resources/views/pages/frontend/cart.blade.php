@@ -21,11 +21,11 @@
     <div class="container mx-auto px-4">
         <div class="flex -mx-4 flex-wrap">
             <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0" id="shopping-cart">
-                <div class="flex flex-start mb-4 mt-8 pb-3 border-b border-gray-200 md:border-b-0">
+                <div class="flex flex-start mb-4 mt-8 pb-3 border-b border-red-500 md:border-b-0">
                     <h3 class="text-2xl font-sans font-semibold">Keranjang</h3>
                 </div>
 
-                <div class="border-b border-gray-200 mb-4 hidden md:block">
+                <div class="border-b border-gray-800 mb-4 hidden md:block">
                     <div class="flex flex-start items-center pb-2 -mx-4">
                         <div class="px-4 flex-none">
                             <div class="" style="width: 90px">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="px-4 w-5/12">
                             <div class="">
-                                <h6 class="font-sans font-semibold">menu</h6>
+                                <h6 class="font-sans font-semibold">Menu</h6>
                             </div>
                         </div>
                         <div class="px-4 w-5/12">
@@ -106,40 +106,40 @@
                         <div class="flex flex-col mb-4">
                             <label for="complete-name" class="text-sm mb-2">Nama</label>
                             <input data-input name="name" type="text" id="complete-name"
-                                class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
+                                class="border-gray-800 border rounded-lg px-4 py-2 bg-white text-sm focus:ring-red-500 focus:ring-1 focus:border-red-500"
                                 placeholder="Masukkan nama" />
                         </div>
 
                         <div class="flex flex-col mb-4">
                             <label for="email" class="text-sm mb-2">Email</label>
                             <input data-input name="email" type="email" id="email"
-                                class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
+                                class="border-gray-800 border rounded-lg px-4 py-2 bg-white text-sm focus:ring-red-500 focus:ring-1 focus:border-red-500"
                                 placeholder="Masukkan email" />
                         </div>
 
                         <div class="flex flex-col mb-4">
                             <label for="address" class="text-sm mb-2">Alamat</label>
                             <input data-input name="address" type="text" id="address"
-                                class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
+                                class="border-gray-800 border rounded-lg px-4 py-2 bg-white text-sm focus:ring-red-500 focus:ring-1 focus:border-red-500"
                                 placeholder="Masukkan alamat" />
                         </div>
 
                         <div class="flex flex-col mb-4">
                             <label for="phone-number" class="text-sm mb-2">Nomor HP</label>
                             <input data-input name="phone" type="tel" id="phone-number"
-                                class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
+                                class="border-gray-800 border rounded-lg px-4 py-2 bg-white text-sm focus:ring-red-500 focus:ring-1 focus:border-red-500"
                                 placeholder="Masukkan nomor HP" />
                         </div>
 
                         <div class="flex flex-col mb-4">
                             <label for="res_date" class="text-sm mb-2">Reservasi</label>
                             <input data-input type="datetime-local" name="res_date" id="res_date"
-                                class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
+                                class="border-gray-800 border rounded-lg px-4 py-2 bg-white text-sm focus:ring-red-500 focus:ring-1 focus:border-red-500"
                                 placeholder="Masukkan tanggal reservasi" />
                         </div>
                         <div class="text-center">
                             <button type="submit" 
-                                class="bg-slate-500 text-white hover:bg-slate-600 hover:text-white focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
+                                class="text-base font-semibold text-white bg-red-500 py-3 px-8 w-full rounded-full hover:opacity-80 hover:shadow-lg transition duration-500">
                                 Buat reservasi
                             </button>
                         </div>

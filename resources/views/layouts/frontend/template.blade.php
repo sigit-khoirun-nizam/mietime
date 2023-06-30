@@ -26,7 +26,7 @@
     <link rel="icon" href="{{ asset('frontend/favicon.ico') }}">
     <link href="{{ asset('frontend/css/app.minify.css') }}" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
 </head>
 
 <body>
